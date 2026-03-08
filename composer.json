@@ -1,0 +1,40 @@
+{
+	"$schema": "https://getcomposer.org/schema.json",
+	"name": "portafolio/portafolio",
+	"description": "Portafolio Carlos Hernandez",
+	"version": "1.0.0",
+	"type": "project",
+	"readme": "README.md",
+	"license": "See MIT license in LICENSE",
+	"homepage": "https://carlos.seelescript.com",
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/SeeleScripts/portafolio"
+	},
+	"repositories": [],
+	"require": {
+		"php": ">=7.3",
+		"slim/slim": "4.*",
+		"slim/psr7": "^1.7",
+		"monolog/monolog": "^3.8",
+		"php-di/php-di": "^7.0",
+		"slim/php-view": "^3.4",
+		"middlewares/trailing-slash": "^2.0",
+		"carnage/php-graphql-client": "^1.14",
+		"guzzlehttp/guzzle": "^7.9",
+		"vlucas/phpdotenv": "^5.6",
+		"mailgun/mailgun-php": "^4.3",
+		"nyholm/psr7": "^1.8",
+		"phpmailer/phpmailer": "^6.9"
+	},
+	"autoload": {
+		"files": [
+			"utils/global_functions.php"
+		]
+	},
+	"config": {
+		"allow-plugins": {
+			"php-http/discovery": true
+		}
+	}
+}

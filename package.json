@@ -1,0 +1,45 @@
+{
+	"name": "portafolio",
+	"description": "Portafolio Carlos Hernandez",
+	"version": "1.0.0",
+	"type": "module",
+	"scripts": {
+		"dev": "vite",
+		"build": "tsc --noEmit && vite build",
+		"composer": "php ./bin/composer.phar"
+	},
+	"readme": "README.md",
+	"license": "See MIT license in LICENSE",
+	"homepage": "https://carlos.seelescript.com",
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/SeeleScripts/portafolio"
+	},
+	"devDependencies": {
+		"@prettier/plugin-php": "^0.22.4",
+		"@tailwindcss/vite": "^4.0.7",
+		"@types/node": "^22.13.4",
+		"prettier": "^3.5.1",
+		"sass": "^1.85.0",
+		"tailwindcss": "^4.0.7",
+		"typescript": "^5.7.3",
+		"vite": "^6.1.1",
+		"vite-imagetools": "^7.0.5",
+		"vite-plugin-ejs": "^1.7.0",
+		"vite-plugin-php": "^2.0.1",
+		"vite-plugin-static-copy": "^2.2.0",
+		"vite-plugin-svgr": "^4.3.0",
+		"vite-tsconfig-paths": "^5.1.4"
+	},
+	"trustedDependencies": [
+		"@parcel/watcher"
+	],
+	"dependencies": {
+		"alpinejs": "^3.14.8",
+		"aos": "^2.3.4",
+		"gsap": "^3.12.7",
+		"just-validate": "^4.3.0",
+		"mouse-follower": "^1.1.2",
+		"swiper": "^11.2.5"
+	}
+}

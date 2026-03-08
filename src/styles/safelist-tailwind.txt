@@ -1,0 +1,4 @@
+bg-[url(/img/team-members/1.png)]
+bg-[url(/img/team-members/2.png)]
+bg-[url(/img/team-members/3.png)]
+bg-[url(/img/team-members/4.png)]
