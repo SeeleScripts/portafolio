@@ -1,6 +1,20 @@
 <?php
 require 'system/main.php';
-$layout = new HTML(title: 'Carlos Hernandez - Portfolio', active: $active);
+$layout = new HTML(
+	'Carlos Hernandez - Portfolio',
+	$active,
+	$lang ?? 'en',
+	$translator ?? null,
+);
+// Create $t helper for use throughout the view
+$_t = $translator ?? null;
+$t = $_t
+	? function (string $key) use ($_t) {
+		return $_t->trans($key);
+	}
+	: function (string $key) {
+		return $key;
+	};
 ?>
 
 <input id="magic_token" type="hidden" value="<?= $ajax_nonce ?>">
@@ -11,7 +25,9 @@ $layout = new HTML(title: 'Carlos Hernandez - Portfolio', active: $active);
     <!-- Experience Section -->
     <section class="space-y-4" id="experience">
         <div class="flex justify-between items-center">
-            <h2 class="text-xl font-bold text-gray-900">Experience</h2>
+            <h2 class="text-xl font-bold text-gray-900"><?= $t(
+            	'experience.title',
+            ) ?></h2>
             <button class="text-gray-400 hover:text-gray-600">
                 <svg class="w-5 h-5" fill="currentColor" viewbox="0 0 20 20">
                     <path
@@ -20,8 +36,7 @@ $layout = new HTML(title: 'Carlos Hernandez - Portfolio', active: $active);
                 </svg>
             </button>
         </div>
-        <p class="text-gray-600">I specialise in WordPress development, UI/UX design, brand strategy, and full-stack
-            solutions.</p>
+        <p class="text-gray-600"><?= $t('experience.description') ?></p>
         <!-- Experience Cards -->
         <div class="grid grid-cols-1 md:grid-cols-3 gap-6 pt-4">
             <!-- Experience Card 1 -->
@@ -75,31 +90,31 @@ $layout = new HTML(title: 'Carlos Hernandez - Portfolio', active: $active);
     <!-- About Me Section -->
     <section class="grid grid-cols-1 md:grid-cols-3 gap-12 border-t border-gray-100 pt-12" id="about">
         <div class="md:col-span-2 space-y-6">
-            <h2 class="text-xl font-bold text-gray-900">About me</h2>
+            <h2 class="text-xl font-bold text-gray-900"><?= $t(
+            	'about.title',
+            ) ?></h2>
             <div class="text-gray-600 space-y-4 leading-relaxed">
-                <p>I'm a WordPress Developer based in Melbourne, Australia. I enjoy working on custom theme development
-                    and high-performance Webflow migrations. I occasionally take on freelance work.</p>
-                <p>I've worked with some of the world's most exciting companies, including <span
-                        class="text-primary font-medium">Coinbase</span>, <span
-                        class="text-primary font-medium">Stripe</span>, and <span
-                        class="text-primary font-medium">Linear</span>. I'm passionate about helping startups grow,
-                    improve their UX and customer experience, and to fundraise through good design.</p>
-                <p>My work has been featured on Typewolf, Mindsparkle Magazine, Webflow, Fonts In Use, CSS Winner,
-                    httpster, Siteinspire, and Best Website Gallery.</p>
+                <p><?= $t('about.bio_1') ?></p>
+                <p><?= $t('about.bio_2') ?></p>
+                <p><?= $t('about.bio_3') ?></p>
             </div>
         </div>
         <div class="space-y-8">
             <!-- Location -->
             <div>
-                <h4 class="text-sm font-semibold text-gray-400 uppercase tracking-wider mb-2">Location</h4>
+                <h4 class="text-sm font-semibold text-gray-400 uppercase tracking-wider mb-2"><?= $t(
+                	'about.location_label',
+                ) ?></h4>
                 <div class="flex items-center gap-2 font-medium">
-                    <span class="text-lg">🇦🇺</span>
-                    <span>Melbourne, AU</span>
+                    <span class="text-lg">��</span>
+                    <span><?= $t('about.location_value') ?></span>
                 </div>
             </div>
             <!-- Website -->
             <div>
-                <h4 class="text-sm font-semibold text-gray-400 uppercase tracking-wider mb-2">Website</h4>
+                <h4 class="text-sm font-semibold text-gray-400 uppercase tracking-wider mb-2"><?= $t(
+                	'about.website_label',
+                ) ?></h4>
                 <a class="flex items-center gap-1 font-medium text-gray-900 hover:text-primary transition-colors"
                     href="#">
                     carlos.seelescript.com
@@ -111,7 +126,9 @@ $layout = new HTML(title: 'Carlos Hernandez - Portfolio', active: $active);
             </div>
             <!-- Portfolio -->
             <div>
-                <h4 class="text-sm font-semibold text-gray-400 uppercase tracking-wider mb-2">Portfolio</h4>
+                <h4 class="text-sm font-semibold text-gray-400 uppercase tracking-wider mb-2"><?= $t(
+                	'about.portfolio_label',
+                ) ?></h4>
                 <a class="flex items-center gap-1 font-medium text-gray-900 hover:text-primary transition-colors"
                     href="#">
                     @carlos.dev
@@ -123,9 +140,11 @@ $layout = new HTML(title: 'Carlos Hernandez - Portfolio', active: $active);
             </div>
             <!-- Email -->
             <div>
-                <h4 class="text-sm font-semibold text-gray-400 uppercase tracking-wider mb-2">Email</h4>
+                <h4 class="text-sm font-semibold text-gray-400 uppercase tracking-wider mb-2"><?= $t(
+                	'about.email_label',
+                ) ?></h4>
                 <a class="flex items-center gap-1 font-medium text-gray-900 hover:text-primary transition-colors"
-                    href="mailto:hi@laylahevans.com">
+                    href="mailto:hi@carlosdev.com">
                     hi@carlosdev.com
                     <svg class="w-4 h-4" fill="none" stroke="currentColor" viewbox="0 0 24 24">
                         <path d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"
@@ -138,7 +157,9 @@ $layout = new HTML(title: 'Carlos Hernandez - Portfolio', active: $active);
     <!-- Recent Work Section -->
     <section class="space-y-8 border-t border-gray-100 pt-12" id="recent-work">
         <div class="flex justify-between items-center">
-            <h2 class="text-xl font-bold text-gray-900">Recent work</h2>
+            <h2 class="text-xl font-bold text-gray-900"><?= $t(
+            	'work.title',
+            ) ?></h2>
             <button class="text-gray-400 hover:text-gray-600">
                 <svg class="w-5 h-5" fill="currentColor" viewbox="0 0 20 20">
                     <path
@@ -174,7 +195,7 @@ $layout = new HTML(title: 'Carlos Hernandez - Portfolio', active: $active);
                 class="aspect-square bg-gray-100 rounded-xl overflow-hidden group cursor-pointer border border-gray-100">
                 <img alt="Work 4"
                     class="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105"
-                    src="https://lh3.googleusercontent.com/aida-public/AB6AXuAAUGNhxjtsdecjtvuNJONNak9W1pUTCkrHsNbHlfl9aULHKFUwt7zdbVGka-rM6yxJbI8KQ-tEkHwWgYgKFyM4JGkQcOkt6i5sG9bnCcNiZMubsz2JfDtgHXXN8qD_vSlJknfVVCtRwMivzpA12ZDYw8I9Kr_QSd2ptvg41ekQqasbVOqZ6-FDuuew1XvwMf2GUZp1khSGWeaVkmluAhZoqCLHMIKAzFhfYVuQbnMqo116RCTv-5C4GKlypJeRMAWRTZZJfZ8hrvQ" />
+                    src="https://lh3.googleusercontent.com/aida-public/AB6AXuAAUGNhxjtsdecjtvuNJONNak9W1pUTCkrHsNbHlfl9aULHKFUwt7zdbVGka-rM6yxJbI8KQ-tEkHwWgYgKFyM4JGkQcOkt6i5sG9bnCcNiZMubsz2JfDtgHXXN8qD_vSlJknfVVCtRwMivzpA12ZDYw8I9Kr_QSd2ptvg41ekQqasbVOqZ6-FDuuew1XvwMf2GUZp1khSGWeaVkmluAhZoqCLHMIKAzFhfYVuQbnMqo116RCTv-5C4GKlypJeZJfZ8hrvQ" />
             </div>
         </div>
     </section>

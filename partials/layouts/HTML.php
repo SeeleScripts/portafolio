@@ -1,10 +1,20 @@
 <?php
 class HTML {
+	/** @var string */ public $title;
+	/** @var string */ public $active;
+	/** @var string */ public $lang;
+	/** @var ?object */ public $translator;
+
 	public function __construct(
-		public string $title,
-		public string $active,
-		public string $lang = 'en'
+		string $title,
+		string $active,
+		string $lang = 'en',
+		?object $translator = null
 	) {
+		$this->title = $title;
+		$this->active = $active;
+		$this->lang = $lang;
+		$this->translator = $translator;
 		ob_start();
 	}
 
@@ -49,6 +59,15 @@ class HTML {
         </div>
         <?php
         $active = $this->active;
+        $lang = $this->lang;
+        $translator = $this->translator;
+        $t = $translator
+        	? function (string $key) use ($translator) {
+        		return $translator->trans($key);
+        	}
+        	: function (string $key) {
+        		return $key;
+        	};
         include 'partials/header.php';
         ?>
         <!-- Page content -->

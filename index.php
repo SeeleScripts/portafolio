@@ -23,6 +23,7 @@ use Dotenv\Dotenv;
 
 require_existing('utils/Nonce.php');
 require_existing('utils/EmailSender.php');
+require_existing('utils/Translator.php');
 
 // ✅ Load Environment Variables
 // $dotenv = Dotenv::createImmutable(__DIR__ . '/');
@@ -47,6 +48,12 @@ $container->set(LoggerInterface::class, function () {
 // ✅ Register View Renderer
 $container->set(PhpRenderer::class, function () {
 	return new PhpRenderer(__DIR__ . '/views');
+});
+
+// ✅ Register Translator
+$container->set(Translator::class, function () {
+	$locale = Translator::detectLocale();
+	return new Translator($locale);
 });
 
 AppFactory::setContainer($container);
