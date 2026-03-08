@@ -59,6 +59,7 @@ export default defineConfig((configEnv: ConfigEnv): UserConfig => {
 					{ src: 'system', dest: '' },
 					{ src: 'configs', dest: '', overwrite: false },
 					{ src: 'vendor', dest: '' },
+					{ src: 'translations', dest: '' },
 				],
 				silent: command === 'serve',
 			}),
