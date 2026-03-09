@@ -86,7 +86,7 @@ class HTML {
         <div class="back-to-top-wrap active-progress">
             <svg viewBox="-1 -1 102 102" class="w-[36px] h-[36px] fixed right-[16px] bottom-[16px]">
                 <path d="M50,1 a49,49 0 0,1 0,98 a49,49 0 0,1 0,-98"
-                    class="fill-transparent stroke-[8px] stroke-[#edb43b]">
+                    class="fill-transparent stroke-[8px] stroke-primary">
                 </path>
             </svg>
         </div>

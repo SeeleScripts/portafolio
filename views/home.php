@@ -19,10 +19,11 @@ $t = $_t
 
 <input id="magic_token" type="hidden" value="<?= $ajax_nonce ?>">
 
+<?php include 'partials/components/navbar.php'; ?>
 
 <!-- BEGIN: MainContent -->
 <main class="max-w-6xl mx-auto px-6 md:px-12 py-12 space-y-16">
-    <hr class="border-t border-gray-200 dark:border-gray-800">
+    <hr data-aos="<?= VITE_SITE_ANIMATION ?>" data-aos-delay="100" class="border-t border-gray-200 dark:border-gray-800 mb-1">
     <?php include 'partials/components/about.php'; ?>
     
     <?php include 'partials/components/experience.php'; ?>

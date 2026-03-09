@@ -16,7 +16,7 @@ darkModeToggle();
 
 AOS.init({
 	duration: 800,
-	offset: 300,
+	offset: 50,
 	once: true,
 	// disable: "mobile",
 });

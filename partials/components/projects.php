@@ -1,5 +1,5 @@
  <!-- Recent Work Section -->
-    <section class="space-y-8 border-t border-gray-100 pt-12" id="recent-work">
+    <section class="space-y-8 border-t border-gray-100 pt-12" id="work">
         <div class="flex justify-between items-center">
             <h2 class="text-xl font-bold text-gray-900"><?= $t(
             	'work.title',

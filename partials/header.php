@@ -1,7 +1,7 @@
 <!-- BEGIN: MainHeader -->
 <header class="relative">
     <!-- Banner Section -->
-    <div data-aos="<?= VITE_SITE_ANIMATION ?>" class="profile-banner w-full rounded-2xl overflow-hidden px-4 md:px-12 max-w-6xl mx-auto mt-12 h-[240px]">
+    <div data-aos="<?= VITE_SITE_ANIMATION ?>" class="profile-banner w-full rounded-2xl overflow-hidden px-4 md:px-12 max-w-6xl mx-auto mt-12 h-[140px] md:h-[240px]">
         <div class="h-full w-full flex items-end rounded-2xl overflow-hidden">
             <!-- Optional: Overlay text or image if needed from reference -->
             <img src="%BASE%/img/banner.jpg" alt="Banner" class="w-full h-full object-cover">
@@ -10,8 +10,8 @@
     </div>
     <!-- Header Content Container -->
     <div data-aos="<?= VITE_SITE_ANIMATION ?>"
-        class="max-w-6xl mx-auto px-6 md:px-12 flex flex-col md:flex-row md:items-end justify-between profile-avatar-container">
-        <div class="flex flex-col md:flex-row items-end gap-6">
+        class="max-w-6xl mx-auto px-6 md:px-12 flex flex-col sm:flex-row sm:items-end justify-between profile-avatar-container">
+        <div class="flex flex-col justify-center sm:flex-row items-center sm:items-end gap-6">
             <!-- Profile Picture -->
             <div class="relative">
                 <img alt="Carlos Hernandez"
@@ -30,7 +30,7 @@
                 <h1 class="text-3xl font-bold text-primary">
                     <?= $t('header.username') ?>
                 </h1>
-                <p class="text-gray-500 mt-1 font-bold">
+                <p class="text-gray-600 mt-1 font-bold dark:text-gray-300 text-sm md:text-md">
                     <?= $t('header.tagline') ?>
                 </p>
             </div>
@@ -44,7 +44,7 @@
             $otherLabel = strtoupper($otherLang);
             ?>
             <button
-                class="lang-switcher flex items-center gap-1.5 px-3 py-2 border border-gray-200 rounded-lg font-medium hover:bg-gray-50 transition-colors text-sm"
+                class="lang-switcher flex items-center gap-1.5 px-3 py-2 border border-gray-200 rounded-lg font-medium hover:bg-gray-50 dark:hover:bg-gray-800 transition-colors text-sm"
                 data-current-lang="<?= $currentLang ?>"
                 data-other-lang="<?= $otherLang ?>"
                 aria-label="<?= isset($t)
