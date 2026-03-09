@@ -47,6 +47,7 @@ return function (App $app) {
 
 		$translator = new Translator($locale);
 		$logger->info('User accessed home page', ['locale' => $locale]);
+		$logger->info('Translator', ['translator' => $translator]);
 
 		$page_data = [
 			'active' => 'home',

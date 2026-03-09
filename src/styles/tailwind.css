@@ -1,10 +1,29 @@
-@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Lato:wght@100;300;400&family=Roboto:wght@100..900&display=swap');
 @import 'tailwindcss';
 @theme {
 	--color-primary: rgb(0, 175, 240);
 	--color-secondary: rgb(247, 142, 30);
 	--font-primary: 'Roboto', sans-serif;
+	--font-secondary: 'Lato', sans-serif;
 }
+
+html {
+	scroll-behavior: smooth;
+	scrollbar-gutter: stable;
+}
+body {
+	font-family: var(--font-primary);
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+	font-family: var(--font-secondary);
+	font-weight: 300;
+}
+@custom-variant dark (&:is(.dark *));
 
 /* Loader */
 .bb-loader .loader:before {
@@ -38,27 +57,11 @@
 }
 /* End Loader */
 
-body {
-	background-color: #fff;
-	color: #111827;
-	font-family:
-		ui-sans-serif,
-		system-ui,
-		-apple-system,
-		BlinkMacSystemFont,
-		'Segoe UI',
-		Roboto,
-		'Helvetica Neue',
-		Arial,
-		'Noto Sans',
-		sans-serif;
+.dark body {
+	background-color: #111827;
+	color: #fff;
 }
-.profile-banner {
-	height: 240px;
-	background-image: url(https://lh3.googleusercontent.com/aida-public/AB6AXuB1VonV4YHcJFzmxySmeN8A0intWoIhOg05FBze9KXGLhgonYpZJ8WKWA3tBl_Mbv1FL0iyUaToCunvi4LTQsSzGnwOFgrct3NA_rPD2lb4HWI-Jdrm_2TXiki4WKFP7ixiSCAU3LGo5IvrFZFXKRiZnsfpJBBQF5tMWVDC8QoFXL1tcaGKIqxTR1bC2GiwbZttBZvQH8oSD6OR8qUFuTi5LV1zr1aoGheyvjVqHs1jx3NNr2owhyVg4Jt9CFbIYyB9boKNw0emEC8);
-	background-size: cover;
-	background-position: center;
-}
+
 .profile-avatar-container {
 	margin-top: -64px;
 }
