@@ -1,11 +1,12 @@
 // vite.config.js
 import { defineConfig, type ConfigEnv, type UserConfig } from 'vite';
 import { fileURLToPath } from 'node:url';
+import { cpSync, mkdirSync, existsSync } from 'node:fs';
+import { resolve } from 'node:path';
 import usePHP from 'vite-plugin-php';
 import { viteStaticCopy } from 'vite-plugin-static-copy';
 import { ViteEjsPlugin } from 'vite-plugin-ejs';
 import { imagetools } from 'vite-imagetools';
-import { existsSync } from 'node:fs';
 import tailwindcss from '@tailwindcss/vite';
 
 export default defineConfig((configEnv: ConfigEnv): UserConfig => {
@@ -18,6 +19,32 @@ export default defineConfig((configEnv: ConfigEnv): UserConfig => {
 	return {
 		base,
 		plugins: [
+			// Copies translations/ into .php-tmp/ on dev server start and on file changes.
+			// viteStaticCopy only writes to disk during build; this plugin fills the gap for dev.
+			{
+				name: 'php-tmp-sync-translations',
+				apply: 'serve',
+				buildStart() {
+					const src = resolve(__dirname, 'translations');
+					const dest = resolve(__dirname, '.php-tmp', 'translations');
+					if (existsSync(src)) {
+						mkdirSync(dest, { recursive: true });
+						cpSync(src, dest, { recursive: true, force: true });
+					}
+				},
+				handleHotUpdate({ file, server }) {
+					if (file.includes(`translations`)) {
+						const src = resolve(__dirname, 'translations');
+						const dest = resolve(
+							__dirname,
+							'.php-tmp',
+							'translations',
+						);
+						mkdirSync(dest, { recursive: true });
+						cpSync(src, dest, { recursive: true, force: true });
+					}
+				},
+			},
 			imagetools(),
 			usePHP({
 				entry: [
