@@ -23,7 +23,12 @@
 	"about.portfolio_label": "LinkedIn",
 	"about.portfolio_value": "Carlos Hernandez Villegas",
 	"about.email_label": "Email",
+
 	"work.title": "Recent work",
+	"projects.thescreamingchef.short_description": " Custom WordPress website built from scratch for a Canadian ready-meal brand, featuring a dynamic product catalog and store locator integration.",
+	"projects.view_project": "View Project",
+	"projects.more_info": "More details",
+
 	"contact.title": "Get in touch",
 	"contact.subtitle": "Have a project in mind or just want to say hi? Feel free to reach out using the form below.",
 	"contact.name": "Name",
