@@ -24,5 +24,13 @@
 	"about.portfolio_value": "Carlos Hernandez Villegas",
 	"about.email_label": "Email",
 	"work.title": "Recent work",
+	"contact.title": "Get in touch",
+	"contact.subtitle": "Have a project in mind or just want to say hi? Feel free to reach out using the form below.",
+	"contact.name": "Name",
+	"contact.name_placeholder": "Your name",
+	"contact.email": "Email",
+	"contact.message": "Message",
+	"contact.message_placeholder": "How can I help you?",
+	"contact.send": "Send Message",
 	"footer.built_with": "Carlos Hernandez. Built with Tailwind."
 }

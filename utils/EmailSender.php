@@ -1,56 +1,57 @@
 <?php
 
-use PHPMailer\PHPMailer\PHPMailer;
-use PHPMailer\PHPMailer\Exception;
-
-class EmailSender {
-	public static function send(array $data): array {
+class EmailSender
+{
+	public static function send(array $data): array
+	{
 		// Sanitize and validate inputs
 		$name = htmlspecialchars($data['name'] ?? '', ENT_QUOTES, 'UTF-8');
 		$email = filter_var($data['email'] ?? '', FILTER_VALIDATE_EMAIL);
-		$reason = strip_tags($data['reason'] ?? '');
-		$message = htmlspecialchars(
-			$data['message'] ?? '',
-			ENT_QUOTES,
-			'UTF-8',
-		);
-		$recipient = filter_var(
-			$data['recipient'] ?? '',
-			FILTER_VALIDATE_EMAIL,
-		);
+		$message = htmlspecialchars($data['message'] ?? '', ENT_QUOTES, 'UTF-8');
 
-		if (!$name || !$email || !$reason || !$message || !$recipient) {
-			return ['error' => 'Invalid input'];
+		if (!$name || !$email || !$message) {
+			return ['error' => 'Invalid input data'];
 		}
 
-		$mail = new PHPMailer(true);
+		$mailgunApi = VITE_SITE_MAILGUN_API;
+		$mailgunDomain = VITE_SITE_MAILGUN_DOMAIN;
+		$recipient = 'chernandezv2013@gmail.com';
 
-		try {
-			$mail->isSMTP();
-			$mail->Host = VITE_SITE_SMTP_HOST;
-			$mail->SMTPAuth = true;
-			$mail->Username = VITE_SITE_SMTP_USER;
-			$mail->Password = VITE_SITE_SMTP_PASS;
-			$mail->SMTPSecure = VITE_SITE_SMTP_SECURE;
-			$mail->Port = VITE_SITE_SMTP_PORT;
+		$postData = [
+			'from'    => "Portfolio Contact <mailgun@{$mailgunDomain}>",
+			'to'      => $recipient,
+			'subject' => "New Contact Form Message from {$name}",
+			'text'    => "Name: {$name}\nEmail: {$email}\n\nMessage:\n{$message}",
+			'h:Reply-To' => "{$name} <{$email}>",
+		];
 
-			$mail->setFrom(VITE_SITE_SMTP_FROM, VITE_SITE_SMTP_FROM_NAME);
-			//$mail->addAddress($recipient);
-			$mail->addAddress('carlos@evolve.ca');
-			$mail->addReplyTo($email, $name);
+		$ch = curl_init("https://api.mailgun.net/v3/{$mailgunDomain}/messages");
+		curl_setopt($ch, CURLOPT_HTTPAUTH, CURLAUTH_BASIC);
+		curl_setopt($ch, CURLOPT_USERPWD, "api:{$mailgunApi}");
+		curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+		curl_setopt($ch, CURLOPT_POST, true);
+		curl_setopt($ch, CURLOPT_POSTFIELDS, $postData);
 
-			$mail->isHTML(false);
-			$mail->Subject = 'New Contact Form Submission';
-			$mail->Body = "Name: $name\nEmail: $email\nReason: $reason\nMessage:\n$message";
+		$result = curl_exec($ch);
+		$httpCode = curl_getinfo($ch, CURLINFO_HTTP_CODE);
+		$curlError = curl_error($ch);
+		curl_close($ch);
 
-			$mail->send();
+		if ($curlError) {
+			return ['error' => 'Connection error: ' . $curlError];
+		}
 
+		$response = json_decode($result, true);
+
+		if ($httpCode === 200) {
 			return [
 				'success' => true,
 				'message' => 'Message sent successfully!',
 			];
-		} catch (Exception $e) {
-			return ['error' => 'Error sending email: ' . $mail->ErrorInfo];
 		}
+
+		return [
+			'error' => 'Failed to send email: ' . ($response['message'] ?? "HTTP {$httpCode}"),
+		];
 	}
 }

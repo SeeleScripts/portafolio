@@ -4,7 +4,7 @@ import Alpine from 'alpinejs';
 import backToTop from './modules/_backtotop';
 import languageSwitcher from './modules/_language_switcher';
 import darkModeToggle from './component/_dark_mode';
-import JustValidate from 'just-validate';
+import contactForm from './modules/_send_email';
 
 window.Alpine = Alpine;
 window.AOS = AOS;
@@ -13,6 +13,7 @@ Alpine.start();
 backToTop();
 languageSwitcher();
 darkModeToggle();
+contactForm();
 
 AOS.init({
 	duration: 800,
@@ -20,5 +21,3 @@ AOS.init({
 	once: true,
 	// disable: "mobile",
 });
-
-//import './modules/_send_email';
