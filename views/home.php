@@ -23,12 +23,19 @@ $t = $_t
 
 <!-- BEGIN: MainContent -->
 <main class="max-w-6xl mx-auto px-6 md:px-12 py-12 space-y-16">
-    <hr data-aos="<?= VITE_SITE_ANIMATION ?>" data-aos-delay="100" class="border-t border-gray-200 dark:border-gray-800 mb-1">
-    <?php include 'partials/components/about.php'; ?>
-    
-    <?php include 'partials/components/experience.php'; ?>
-    <?php include 'partials/components/projects.php'; ?>
-    
-   
+
+	<?php include 'partials/components/about.php'; ?>
+	<hr data-aos="<?= VITE_SITE_ANIMATION ?>" data-aos-delay="100"
+		class="border-t border-gray-200 dark:border-gray-800 mb-1">
+
+	<?php include 'partials/components/projects.php'; ?>
+
+	<hr data-aos="<?= VITE_SITE_ANIMATION ?>" data-aos-delay="100"
+		class="border-t border-gray-200 dark:border-gray-800 mb-1">
+	<?php include 'partials/components/experience.php'; ?>
+
+	<hr data-aos="<?= VITE_SITE_ANIMATION ?>" data-aos-delay="100"
+		class="border-t border-gray-200 dark:border-gray-800 mb-1">
+	<?php include 'partials/components/contact.php'; ?>
 </main>
 <!-- END: MainContent -->

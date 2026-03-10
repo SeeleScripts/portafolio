@@ -44,7 +44,7 @@
             $otherLabel = strtoupper($otherLang);
             ?>
             <button
-                class="lang-switcher flex items-center gap-1.5 px-3 py-2 border border-gray-200 rounded-lg font-medium hover:bg-gray-50 dark:hover:bg-gray-800 transition-colors text-sm"
+                class="lang-switcher flex items-center gap-1.5 px-3 py-2 border border-gray-200 rounded-lg font-medium hover:bg-gray-50 dark:hover:bg-gray-800 transition-colors text-sm cursor-pointer"
                 data-current-lang="<?= $currentLang ?>"
                 data-other-lang="<?= $otherLang ?>"
                 aria-label="<?= isset($t)
@@ -61,7 +61,7 @@
             </button>
 
             <!-- Theme Switcher -->
-            <button id="theme-toggle" class="flex items-center justify-center w-[38px] border border-gray-200 dark:border-gray-800 rounded-lg hover:bg-gray-50 dark:hover:bg-gray-800 transition-colors" aria-label="Toggle Dark Mode">
+            <button id="theme-toggle" class="flex items-center justify-center w-[38px] border border-gray-200 dark:border-gray-800 rounded-lg hover:bg-gray-50 dark:hover:bg-gray-800 transition-colors cursor-pointer" aria-label="Toggle Dark Mode">
                 <!-- Sun icon -->
                 <svg class="w-5 h-5 hidden dark:block text-gray-500 dark:text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z"></path></svg>
                 <!-- Moon icon -->
