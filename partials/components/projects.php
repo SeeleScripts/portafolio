@@ -4,11 +4,12 @@
         <h2 data-aos="<?= VITE_SITE_ANIMATION ?>" class="text-3xl text-primary">Recent work</h2>
     </div>
     <div class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-8">
-    <!-- Project Card 1 -->
-        <div data-aos="<?= VITE_SITE_ANIMATION ?>" class="card-border rounded-xl overflow-hidden flex flex-col hover:shadow-md transition-shadow bg-white">
+        <!-- Project Card 1 -->
+        <div data-aos="<?= VITE_SITE_ANIMATION ?>"
+            class="card-border rounded-xl overflow-hidden flex flex-col hover:shadow-md transition-shadow bg-white">
             <div class="aspect-video bg-gray-100 overflow-hidden">
                 <img alt="Project 1" class="w-full h-full object-cover"
-                    src="%BASE%/img/posts/thescreamingchef/thescreaming-chef.webp" />
+                    src="%BASE%/img/posts/thescreamingchef/thescreamingchef.webp" />
             </div>
             <div class="p-5 flex-grow flex flex-col dark:bg-gray-800">
                 <div class="flex flex-wrap gap-2 mb-3">
@@ -30,9 +31,9 @@
                     </button>
                     <button
                         class="px-4 py-2 border border-gray-200 text-gray-600 dark:text-gray-300 dark:border-gray-600 text-sm font-semibold rounded-lg hover:bg-gray-50 transition-colors flex-1">
-                        <a title="More details" href="/the-screaming-chef"><?= $t(
-                        	'projects.more_info',
-                        ) ?></a>    
+                        <a title="More details" href="/<?= $lang ?>/work/the-screaming-chef/">
+                            <?= $t('projects.more_info') ?>
+</a>
                     </button>
                 </div>
             </div>

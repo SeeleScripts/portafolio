@@ -24,8 +24,8 @@ return function (App $app) {
 			->withStatus(302);
 	});
 
-	// Localized home route: /{locale}/
-	$app->get('/{locale}/', function (
+	// Localized home route: /{locale}[/]
+	$app->get('/{locale}[/]', function (
 		Request $request,
 		Response $response,
 		array $args
