@@ -33,12 +33,19 @@ return function (App $app) {
 			'slug' => $slug,
 		]);
 
-		// For now, pass basic data to the view
+		$projects = require __DIR__ . '/../data/projects.php';
+		if (!array_key_exists($slug, $projects)) {
+			throw new \Slim\Exception\HttpNotFoundException($request);
+		}
+
+		$project_data = $projects[$slug];
+
 		$page_data = [
 			'active' => 'work',
 			'slug' => $slug,
 			'lang' => $locale,
 			'translator' => $translator,
+			'project_data' => $project_data,
 		];
 
 		session_write_close();

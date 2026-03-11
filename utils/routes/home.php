@@ -49,11 +49,14 @@ return function (App $app) {
 		$logger->info('User accessed home page', ['locale' => $locale]);
 		$logger->info('Translator', ['translator' => $translator]);
 
+		$projects = require __DIR__ . '/../data/projects.php';
+
 		$page_data = [
 			'active' => 'home',
 			'ajax_nonce' => Nonce::generate('send_email'),
 			'lang' => $locale,
 			'translator' => $translator,
+			'projects' => $projects,
 		];
 
 		session_write_close();
