@@ -1,4 +1,4 @@
-<footer class="max-w-6xl mx-auto px-6 md:px-12 py-12 border-t border-gray-100">
+<footer class="max-w-6xl mx-auto px-6 md:px-12 py-12 border-t border-gray-100" data-aos="<?= VITE_SITE_ANIMATION ?>">
     <div class="flex flex-col md:flex-row justify-between items-center gap-6">
         <div class="text-gray-500 text-sm">
           <?= isset($t)
