@@ -1,14 +1,18 @@
 <section class="space-y-8  pt-12" id="contact">
     <div class="flex justify-between items-center">
-        <h2 class="text-2xl text-primary"><?= isset($t)
-        	? $t('contact.title')
-        	: 'Get in touch' ?></h2>
+        <h2 data-aos="<?= VITE_SITE_ANIMATION ?>" class="text-2xl text-primary"><?= isset(
+	$t,
+)
+	? $t('contact.title')
+	: 'Get in touch' ?></h2>
     </div>
     <div class="max-w-2xl">
-        <p class="text-gray-600 dark:text-gray-400 mb-8"><?= isset($t)
-        	? $t('contact.subtitle')
-        	: 'Have a project in mind or just want to say hi? Feel free to reach out using the form below.' ?></p>
-        <form id="contactForm" action="#" class="space-y-6" method="POST" novalidate>
+        <p data-aos="<?= VITE_SITE_ANIMATION ?>" class="text-gray-600 dark:text-gray-400 mb-8"><?= isset(
+	$t,
+)
+	? $t('contact.subtitle')
+	: 'Have a project in mind or just want to say hi? Feel free to reach out using the form below.' ?></p>
+        <form data-aos="<?= VITE_SITE_ANIMATION ?>" data-aos-delay="200" id="contactForm" action="#" class="space-y-6" method="POST" novalidate>
             <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
                 <div class="space-y-2">
                     <label class="block text-sm font-semibold text-gray-700 dark:text-gray-300" for="name">

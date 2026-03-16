@@ -1,20 +1,15 @@
   <!-- Experience Section -->
-    <section class="space-y-4" id="experience">
+    <section class="space-y-8 pt-12" id="experience">
         <div class="flex justify-between items-center">
-            <h2 class="text-xl font-bold text-gray-900"><?= $t(
-            	'experience.title',
-            ) ?></h2>
-            <button class="text-gray-400 hover:text-gray-600">
-                <svg class="w-5 h-5" fill="currentColor" viewbox="0 0 20 20">
-                    <path
-                        d="M10 6a2 2 0 110-4 2 2 0 010 4zM10 12a2 2 0 110-4 2 2 0 010 4zM10 18a2 2 0 110-4 2 2 0 010 4z">
-                    </path>
-                </svg>
-            </button>
+            <h2 data-aos="<?= VITE_SITE_ANIMATION ?>" class="text-xl text-primary"><?= $t(
+	'experience.title',
+) ?></h2>            
         </div>
-        <p class="text-gray-600"><?= $t('experience.description') ?></p>
+        <p data-aos="<?= VITE_SITE_ANIMATION ?>" class="text-gray-600 dark:text-gray-400"><?= $t(
+	'experience.description',
+) ?></p>
         <!-- Experience Cards -->
-        <div class="grid grid-cols-1 md:grid-cols-3 gap-6 pt-4">
+        <div data-aos="<?= VITE_SITE_ANIMATION ?>" class="grid grid-cols-1 md:grid-cols-3 gap-6 pt-4">
             <!-- Experience Card 1 -->
             <div class="card-border rounded-xl p-6 space-y-4 hover:shadow-sm transition-shadow">
                 <div class="flex items-center gap-4">
@@ -22,14 +17,14 @@
                         class="w-12 h-12 bg-blue-600 rounded-full flex items-center justify-center text-white font-bold">
                         C</div>
                     <div>
-                        <h3 class="font-bold text-gray-900">Lead WordPress Developer</h3>
-                        <p class="text-sm text-gray-500">Coinbase</p>
+                        <h3 class="text-primary">Senior WordPress Developer</h3>
+                        <p class="text-sm text-gray-500">Evolve Agency Group</p>
                     </div>
                 </div>
-                <p class="text-sm text-gray-400">May 2020 – Present</p>
+                <p class="text-sm text-gray-400">May 2021 – March 2026</p>
             </div>
             <!-- Experience Card 2 -->
-            <div class="card-border rounded-xl p-6 space-y-4 hover:shadow-sm transition-shadow">
+            <div data-aos="<?= VITE_SITE_ANIMATION ?>" class="card-border rounded-xl p-6 space-y-4 hover:shadow-sm transition-shadow">
                 <div class="flex items-center gap-4">
                     <div
                         class="w-12 h-12 bg-gray-200 rounded-full flex items-center justify-center text-gray-800 font-bold overflow-hidden">
@@ -38,14 +33,14 @@
                         </div>
                     </div>
                     <div>
-                        <h3 class="font-bold text-gray-900">WordPress Developer</h3>
-                        <p class="text-sm text-gray-500">Linear</p>
+                        <h3 class="font-bold text-gray-900">Web Developer</h3>
+                        <p class="text-sm text-gray-500">Accedo Technologies</p>
                     </div>
                 </div>
                 <p class="text-sm text-gray-400">Jan 2018 – May 2020</p>
             </div>
             <!-- Experience Card 3 -->
-            <div class="card-border rounded-xl p-6 space-y-4 hover:shadow-sm transition-shadow">
+            <div data-aos="<?= VITE_SITE_ANIMATION ?>" class="card-border rounded-xl p-6 space-y-4 hover:shadow-sm transition-shadow">
                 <div class="flex items-center gap-4">
                     <div class="w-12 h-12 bg-indigo-600 rounded-full flex items-center justify-center text-white">
                         <svg class="w-6 h-6" fill="currentColor" viewbox="0 0 24 24">

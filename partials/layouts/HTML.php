@@ -75,11 +75,17 @@ class HTML {
         <!-- Page content -->
         <?= $output ?>
         <!-- Contact form -->
-        <?php require_existing(
-        	'partials/components/contactform-component.php',
-        ); ?>
+        <?php 
+        if (file_exists('partials/components/contactform-component.php')) {
+            include 'partials/components/contactform-component.php';
+        }
+        ?>
         <!-- Footer -->
-        <?php require_existing('partials/footer.php'); ?>
+        <?php 
+        if (file_exists('partials/footer.php')) {
+            include 'partials/footer.php';
+        }
+        ?>
     </div>
     <!-- Back to top  -->
     <a href="#Top" data-cursor-text="Click"

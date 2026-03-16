@@ -30,7 +30,7 @@
                     <?= $t('about.website_label') ?>
                 </h2>
                 <a class="flex items-center gap-1 font-medium text-gray-600 hover:text-primary transition-colors dark:text-gray-300"
-                    href="#">
+                    href=" https://seelescript.com" target="_blank">
                     https://seelescript.com
                     <svg class="w-4 h-4" fill="none" stroke="currentColor" viewbox="0 0 24 24">
                         <path d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"
@@ -44,7 +44,7 @@
                     <?= $t('about.portfolio_label') ?>
                 </h2>
                 <a class="flex items-center gap-1 font-medium text-gray-600 hover:text-primary transition-colors dark:text-gray-300"
-                    href="https://www.linkedin.com/in/carlos-hernandez-villegas-a4410a1b7/">
+                    href="https://www.linkedin.com/in/carlos-hernandez-villegas-a4410a1b7/" target="_blank">
                     <?= $t('about.portfolio_value') ?>
                     <svg class="w-4 h-4" fill="none" stroke="currentColor" viewbox="0 0 24 24">
                         <path d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"

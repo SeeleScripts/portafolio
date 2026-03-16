@@ -3,7 +3,7 @@
 	"lang.es": "ES",
 	"lang.switch_to_en": "Switch to English",
 	"lang.switch_to_es": "Cambiar a Español",
-	"header.username": "Carlos Hernandez",
+	"header.username": "Carlos Hernández Villegas",
 	"header.tagline": "Desarrollador WordPress | Optimización SEO | Especialista Frontend",
 	"header.video_call": "Videollamada",
 	"header.message": "Mensaje",
@@ -13,7 +13,7 @@
 	"nav.contact": "Contáctame",
 	"experience.title": "Experiencia",
 	"experience.description": "Me especializo en desarrollo WordPress, diseño UI/UX, estrategia de marca y soluciones full-stack.",
-	"about.title": "Sobre mí",
+	"about.title": "Acerca de mí",
 	"about.bio_1": "Desarrollador Senior de WordPress con más de 15 años de experiencia construyendo plataformas web escalables, seguras y de alto rendimiento para clientes internacionales.",
 	"about.bio_2": "Especializado en arquitectura personalizada de WordPress, desarrollo de plugins, integraciones de API REST y optimización de Core Web Vitals, entregando consistentemente soluciones de nivel empresarial con rendimiento elite en PageSpeed.",
 	"about.bio_3": "Experimentado en implementaciones headless de WordPress, SEO técnico, integraciones de capas de datos GA4/GTM y estrategias avanzadas de almacenamiento en caché. Habilidad comprobada para traducir requisitos técnicos complejos en aplicaciones web de alto rendimiento y orientadas a la conversión.",
@@ -25,6 +25,7 @@
 	"about.email_label": "Correo electrónico",
 
 	"work.title": "Proyectos recientes",
+	"work.description": "Soy desarrollador web sénior especializado en WordPress y plataformas de comercio electrónico modernas. Mi trabajo abarca desde el desarrollo de sitios web personalizados en WordPress e integraciones con Shopify hasta arquitecturas headless de WooCommerce, optimización del rendimiento y automatización de flujos de trabajo. Me centro en crear soluciones escalables y fáciles de mantener que mejoren el rendimiento, simplifiquen la gestión de contenido y fomenten el crecimiento real del negocio.",
 	"projects.thescreamingchef.short_description": "Sitio web de WordPress personalizado construido desde cero para una marca canadiense de comidas preparadas, con un catálogo de productos dinámico y un localizador de tiendas integrado.",
 	"projects.thescreamingchef.visit_website": "Visitar Sitio Web",
 	"projects.thescreamingchef.overview_title": "Resumen del Proyecto",
@@ -119,6 +120,7 @@
 	"projects.sakurastorenicaragua.ai_integration_description": "Un asistente de productos con IA experimental impulsado por WooCommerce MCP permite a los clientes hacer preguntas sobre productos como modelos, colores, disponibilidad y precios. El objetivo a largo plazo es expandir este sistema para asistir a los clientes durante todo el proceso de compra.",
 	"projects.sakurastorenicaragua.automation_experiments": "Experimentos de Automatización",
 	"projects.sakurastorenicaragua.automation_experiments_description": "<li>Publicación automática de productos en Facebook usando n8n</li><li>Notificaciones de WhatsApp para nuevos pedidos</li><li>Automatización de flujos de trabajo conectando servicios de la tienda</li>",
+	"projects.sakurastorenicaragua.technologies_title": "Tecnologías",
 	"projects.sakurastorenicaragua.development_status": "Estado de Desarrollo",
 	"projects.sakurastorenicaragua.development_status_description": "Actualmente en desarrollo activo durante fines de semana y tiempo libre. La primera versión pública está planeada para su lanzamiento en mayo de 2026.",
 	"projects.sakurastorenicaragua.personal_project": "Proyecto Personal – En Desarrollo",
@@ -154,5 +156,5 @@
 	"contact.message": "Mensaje",
 	"contact.message_placeholder": "¿En qué puedo ayudarte?",
 	"contact.send": "Enviar Mensaje",
-	"footer.built_with": "Carlos Hernandez. Hecho con Tailwind."
+	"footer.built_with": "Carlos Hernández. Hecho con Tailwind."
 }
